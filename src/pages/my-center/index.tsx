@@ -1,11 +1,13 @@
+import CommonList from "@/components/commonList"
 
-import { Outlet } from "react-router-dom"
 
 export default function MyCenter() {
-    return (
-        <div>
-            MyCenter
-            <Outlet />
-        </div>
-    )
+  return (
+    <CommonList
+      bordered={false}
+      title="个人中心"
+    >
+      MyCenter
+    </CommonList>
+  )
 }

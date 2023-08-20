@@ -5,10 +5,11 @@ import MyCenter from "./src/pages/my-center";
 // import MyCenterDetail from "./src/pages/my-center-detail";
 import Layout from "@/pages/layout";
 import NotFound from "@/pages/404";
+import { routeGuard } from '@/utils/auth'
 
 interface RouteConfig {
   path: string; //给react-router使用，注册路由
-  element?: JSX.Element; //组件
+  element?: any; //组件
   children?: RouteConfig[]; //子路由等等
   id: string; //侧边栏需要使用
   name?: string; // 侧边栏展的label
@@ -25,7 +26,7 @@ const myRoutes: RouteConfig[] = [
   },
   {
     path: '/',
-    element: < Layout />,
+    element: routeGuard(< Layout />),
     id: '/',
     showOnSider: false,
     children: [
@@ -37,31 +38,24 @@ const myRoutes: RouteConfig[] = [
         showOnSider: true,
         children: [
           {
-            path: "work-2",
-            element: <Dashboard />,
-            id: '/dashboard/work-2',
-            name: '工作台-2',
-            showOnSider: true,
-          },
-          {
-            path: "work-3",
-            element: <Dashboard />,
-            id: '/dashboard/work-3',
-            name: '工作台-3',
+            path: "work-1",
+            element: routeGuard(<Dashboard />),
+            id: '/dashboard/work-1',
+            name: '工作台-1',
             showOnSider: true,
           },
         ]
       },
       {
         path: "admin",
-        element: <Admin />,
+        element: routeGuard(<Admin />),
         id: '/admin',
         name: '管理员',
         showOnSider: true,
       },
       {
         path: "my-center",
-        element: <MyCenter />,
+        element: routeGuard(<MyCenter />),
         id: '/my-center',
         name: '个人中心',
         showOnSider: true,
@@ -71,6 +65,7 @@ const myRoutes: RouteConfig[] = [
   {
     path: "*",
     element: <NotFound />,
+    id: '404'
   },
 ];
 
