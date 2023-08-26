@@ -1,5 +1,5 @@
 
-import CommonList from "@/components/commonList"
+import CommonList from "@/components/CommonListCom"
 
 export default function Admin() {
   return (

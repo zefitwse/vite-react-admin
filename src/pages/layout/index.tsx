@@ -1,16 +1,16 @@
 import { Outlet } from "react-router-dom";
-import NaviBar from "@/components/navBar";
-import { useState } from "react";
-import SideBar from "@/components/siderBar";
+import NaviBar from "@/components/NavBarCom";
+import SideBar from "@/components/SiderBarCom";
+import { useSelector } from "react-redux";
 import './index.less'
 
 export default function Layout() {
-  //
-  const [usename, setUserName] = useState('LiHua')
+
+  const { name } = useSelector((state: any) => state.info)
 
   return (
     <div>
-      <NaviBar username={usename}></NaviBar>
+      <NaviBar username={name}></NaviBar>
       <div className="layout-container">
         <SideBar />
         {/* router.tsx 下的二级路由  */}

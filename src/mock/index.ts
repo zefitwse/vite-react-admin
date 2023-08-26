@@ -1,0 +1,1 @@
+import mockjs from "mockjs";

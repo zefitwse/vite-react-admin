@@ -1,8 +1,9 @@
+import './index.less'
 
 export default function NotFound() {
-    return (
-        <div>
-            404 not found
-        </div>
-    )
+  return (
+    <div className="not-found">
+      404 not found
+    </div>
+  )
 }

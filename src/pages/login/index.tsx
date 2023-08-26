@@ -1,12 +1,15 @@
 import { useEffect } from 'react';
 import { Card, Button, Checkbox, Form, Input } from 'antd';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { useLogin } from '@/api/login';
+
 import './index.less'
+import '@/mock/index'
 
 export default function Login() {
   const [form] = Form.useForm();
-  const onFinish = (values: any) => {
-
+  const onFinish = async (values: any) => {
+    //记住密码
     if (values.remember) {
       localStorage.setItem('username', values.username);
       localStorage.setItem('password', values.password);
@@ -14,17 +17,25 @@ export default function Login() {
       localStorage.removeItem('username');
       localStorage.removeItem('password');
     }
-    //调用登录接口
-    //......
-    //假设 账号123 密码123为登录成功
-    const res = values.username === '123' && values.password === '123'
-    if (res) {
-      sessionStorage.setItem('token', 'token-1')
-      // const url = window.location
-      window.open('http://localhost:5173/my-center', "_self")
 
-    } else {
-      window.alert('账号或者密码错误')
+    //调用登录接口
+    const data = {
+      username: values.username,
+      password: values.password
+    }
+
+    try {
+      const res: any = await useLogin(data)
+      if (res) {
+        sessionStorage.setItem('token', res.token)
+        //这里看你实际情况，到底是用路由navigate跳转还是用window.open去跳转。地址随便改
+        window.open('http://localhost:5173/dashboard/work-1', '_self')
+      } else {
+        window.alert('账号或者密码错误')
+      }
+    }
+    catch (err) {
+      console.log(err)
     }
   }
 
