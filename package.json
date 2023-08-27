@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
+    "@types/echarts": "^4.9.18",
     "@types/mockjs": "^1.0.7",
     "antd": "^5.8.2",
     "axios": "^1.4.0",
+    "echarts": "^5.4.3",
     "less": "^4.2.0",
     "mock": "^0.1.1",
     "mockjs": "^1.1.0",
