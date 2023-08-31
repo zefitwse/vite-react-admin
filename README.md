@@ -4,3 +4,6 @@
 This is a backend management project framework based on react books, ant design, aixos, redux, react router v6, echarts, and vite. The framework integrates authentication, routing guard, request response interceptor, 404page, and displays different sidebars and dynamic production routing strategies for different roles (such as ordinary users who cannot see the administrator's sidebar and URL). It can meet basic backend management applications. At the same time, I placed the backend code in the nodeServer.md file. Although the backend code is relatively simple and similar to demo, it is guaranteed to optimize too many any types in the future
 
 
+![1693489267292](https://github.com/zefitwse/vite-react-admin/assets/101004331/73504931-5095-47c0-998c-5488b9beb506)
+
+![1693489298183](https://github.com/zefitwse/vite-react-admin/assets/101004331/4f9ea3f5-3c4f-4edb-937e-3a7f599eba85)
