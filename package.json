@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@arco-design/web-react": "^2.54.0",
     "@reduxjs/toolkit": "^1.9.5",
     "@types/echarts": "^4.9.18",
     "@types/mockjs": "^1.0.7",

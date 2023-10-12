@@ -1,0 +1,43 @@
+.yzm-modal {
+  width: 600px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .ant-modal-content {
+    padding: 10px !important;
+  }
+  .yzm-container {
+    position: relative;
+    background-color: rgb(var(--arcoblue-1));
+    .move-yzm {
+      position: absolute;
+      z-index: 1;
+    }
+    .static-yzm {
+      border-radius: 4px;
+    }
+    .scroll-bar {
+      height: 50px;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      position: relative;
+      border-radius: 4px;
+
+      .scroll-block {
+        width: 80px;
+        background-color: rgba(30, 112, 212, 0.865);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+      }
+
+      .scroll-icon {
+        width: 50px;
+        color: white;
+      }
+    }
+  }
+}
